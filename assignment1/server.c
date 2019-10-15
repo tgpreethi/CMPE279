@@ -67,7 +67,7 @@ int main(int argc, char const *argv[])
         printf("Log: Child Process: forked child_pid = %d\n", child_pid);
         printf("Log: Child Process: Current pid = %d\n",getpid());
         printf("Log: Child Process: Current uid = %ld\n", (long) getuid()); 
-
+        //Changing user from root to "nobody"
         passwd_ptr = getpwnam("nobody");
         printf("Log: Child Process: UID of nobody=%ld\n",(long) passwd_ptr->pw_uid);
         if (setuid(passwd_ptr->pw_uid) != 0)   
@@ -84,7 +84,7 @@ int main(int argc, char const *argv[])
     else if (child_pid > 0){
         //fork return PID of child process inside parent
         //Waiting for child process to complete
-        printf("Log: Parent Process: Waiting for child process to complete\n")
+        printf("Log: Parent Process: Waiting for child process to complete\n");
         if((f_pid = wait(&status)) < 0){
             perror("Log: Parent Process: Error in wait");
             _exit(1);

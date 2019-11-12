@@ -13,10 +13,13 @@ Starting with assignment 1 as a starting point, add in code to re-exec the serve
 
 Starting with assignment 2 as a starting point, modify the server and client code as follows:
 • Accept a command line parameter to specify the port being used
-• Accept an additional command line parameter on the server to specify a disk file whose content
-will be sent to the client instead of the static “Hello” message.
+
+• Accept an additional command line parameter on the server to specify a disk file whose content will be sent to the client instead of the static “Hello” message.
+
 • After re-exec’ing, chroot() to an empty directory on the disk
+
 • Open the disk file described above before fork/exec, and pass the file descriptor to the child
+
 Questions:
 1. What happens if the file being requested is not inside the chroot? Does it matter?
 2. Explain the mechanism you are using to pass file descriptors between parent and child processes.

@@ -61,6 +61,7 @@ int main(int argc, char const *argv[])
     seccomp_rule_add(filter_ctx, SCMP_ACT_ALLOW, SCMP_SYS(fcntl), 0);
     seccomp_rule_add(filter_ctx, SCMP_ACT_ALLOW, SCMP_SYS(exit_group), 0);
     seccomp_rule_add(filter_ctx, SCMP_ACT_ALLOW, SCMP_SYS(brk), 0);
+    seccomp_rule_add(filter_ctx, SCMP_ACT_ALLOW, SCMP_SYS(dup), 0);
     seccomp_load(filter_ctx);
 
     if(argc!=3){

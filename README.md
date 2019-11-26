@@ -25,3 +25,14 @@ Questions:
 2. Explain the mechanism you are using to pass file descriptors between parent and child processes.
 3. What happens if the file size of the disk file exceeds the size of the client’s hardcoded buffer?
 Does the client have sufficient checks to ensure no buffer overruns occur?
+
+## Assignment 4
+
+Using seccomp-bpf, AppArmor, or SELinux, configure a security policy that restricts the system calls allowed by the client and server program to that minimum set required. You may need to use the ‘strace’ tool as we did in class to determine what that minimum set is required for each program. Finally, ensure that your enforcement technique is working by intentionally calling a prohibited system call in one of the programs and note the resulting behaviour (don’t turn in that code though).
+Questions:
+1. Which capabilities API (seccomp-bpf, AppArmor, or SELinux) did you choose? Why did you
+make that choice?
+2. What was the process you used to ascertain the list of system calls required by each program?
+3. What system calls are needed by each?
+4. What happens when your application calls the prohibited system call? What is the application
+behaviour that results from the call?
